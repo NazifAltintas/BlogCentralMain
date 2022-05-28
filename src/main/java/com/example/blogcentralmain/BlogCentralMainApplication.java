@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BlogCentralMainApplication {
 
     //main class
+    // some differences from emrah
     
     public static void main(String[] args) {
         SpringApplication.run(BlogCentralMainApplication.class, args);
