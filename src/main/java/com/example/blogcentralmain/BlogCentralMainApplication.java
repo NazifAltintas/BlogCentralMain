@@ -9,6 +9,7 @@ public class BlogCentralMainApplication {
     //main class
     // some differences from emrah
     // third changing
+    // git
     
     public static void main(String[] args) {
         SpringApplication.run(BlogCentralMainApplication.class, args);
