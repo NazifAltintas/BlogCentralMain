@@ -9,6 +9,7 @@ public class BlogCentralMainApplication {
     //main class
     // some differences from emrah
     // master has added somethinks
+    //test
 
 
     public static void main(String[] args) {
