@@ -7,8 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BlogCentralMainApplication {
 
     //main class
-    // some differences from emrah
-    // master has added something's
+    // some addings from master
 
 
     public static void main(String[] args) {
