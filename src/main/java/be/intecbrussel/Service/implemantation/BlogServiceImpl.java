@@ -18,17 +18,17 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public List<Blog> getAllBlogs() {
-        return blogsRepository.findAll();
+    return blogsRepository.findAll();
     }
 
     @Override
-    public Blog getBlogById(int id) {
+    public Blog getBlogById(Long id) {
         Blog blog =  blogsRepository.findById(id).get();
         return blog;
     }
 
     @Override
-    public void createAnimal(Blog blog) {
+    public void createBlog(Blog blog) {
     blogsRepository.save(blog);
 
     }

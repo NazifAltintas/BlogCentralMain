@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface BlogService {
     public List<Blog> getAllBlogs();
-    public Blog getBlogById(int id);
-    public void createAnimal(Blog blog);
+    public Blog getBlogById(Long id);
+    public void createBlog(Blog blog);
 }
