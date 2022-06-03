@@ -1,8 +1,12 @@
 package be.intecbrussel.controller;
 
-import be.intecbrussel.Service.intefaces.BlogService;
+
+import be.intecbrussel.data.Auteur;
 import be.intecbrussel.data.Blog;
+import be.intecbrussel.service.intefaces.BlogService;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,6 +56,10 @@ public class BlogController {
 
      return "blogPost";
     }
+
+
+
+
 
 
 }

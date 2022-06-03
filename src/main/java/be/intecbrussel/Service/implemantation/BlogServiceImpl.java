@@ -1,8 +1,8 @@
-package be.intecbrussel.Service.implemantation;
+package be.intecbrussel.service.implemantation;
 
-import be.intecbrussel.Service.intefaces.BlogService;
 import be.intecbrussel.data.Blog;
 import be.intecbrussel.repository.BlogsRepository;
+import be.intecbrussel.service.intefaces.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

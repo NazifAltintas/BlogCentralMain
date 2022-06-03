@@ -1,6 +1,3 @@
-package be.intecbrussel;
-
-
 
 
 //@DataJpaTest
@@ -8,8 +5,7 @@ package be.intecbrussel;
 //@Rollback(false)
 //@SpringBootTest
 //class BlogCentralMainApplicationTests {
-//    @Autowired
-//    private TestEntityManager entityManager;
+//
 //
 //    @Autowired
 //    private AuteurRepository repo;
