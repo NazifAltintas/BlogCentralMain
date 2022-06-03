@@ -22,7 +22,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Blog getBlogById(Long id) {
+    public Blog getBlogById(long id) {
         Blog blog =  blogsRepository.findById(id).get();
         return blog;
     }

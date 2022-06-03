@@ -8,7 +8,7 @@ public interface BlogService {
     public List<Blog> getAllBlogs();
 
 
-    public Blog getBlogById(int id);
+    public Blog getBlogById(long id);
  
     public void createBlog(Blog blog);
 }
