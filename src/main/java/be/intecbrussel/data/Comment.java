@@ -13,7 +13,7 @@ public class Comment {
     private String text;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Commentator commentator;
+    private User commentator;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Blog blog;
@@ -21,7 +21,7 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(String text, Commentator commentator, Blog blog) {
+    public Comment(String text, User commentator, Blog blog) {
         this.text = text;
         this.commentator = commentator;
         this.blog = blog;
@@ -43,11 +43,11 @@ public class Comment {
         this.text = text;
     }
 
-    public Commentator getCommentator() {
+    public User getCommentator() {
         return commentator;
     }
 
-    public void setCommentator(Commentator commentator) {
+    public void setCommentator(User commentator) {
         this.commentator = commentator;
     }
 

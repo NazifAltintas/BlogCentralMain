@@ -1,14 +1,14 @@
 package be.intecbrussel.services.implementations;
 
 import be.intecbrussel.data.Auteur;
-import be.intecbrussel.data.Commentator;
+import be.intecbrussel.data.User;
 import be.intecbrussel.services.interfaces.VisitorService;
 
 import java.util.List;
 
 public class VisitorServiceImpl implements VisitorService {
     @Override
-    public List<Commentator> getAllVisitors() {
+    public List<User> getAllVisitors() {
         return null;
     }
 
