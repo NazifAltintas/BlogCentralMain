@@ -7,9 +7,9 @@
 <body>
 <div th:each = "blog:${blogs}">
     <p> BlogTitle: </p>
-    <p th:text = "${blog.title}"></p>
+    <p th:text = "${blog.title}" ></p>
     <p> BlogContent: </p>
-    <p th:text = "${blog.text}"></p>
+    <p th:text = "${#strings.abbreviate(blog.text,150)}"></p>
 </div>
 
 </body>

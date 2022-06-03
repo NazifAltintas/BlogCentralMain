@@ -9,7 +9,7 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/styles2.css" rel="stylesheet" />
 
     </head>
     <body>
@@ -63,8 +63,8 @@
                             <div class="card-body">
                                 <div class="small text-muted">January 1, 2022</div>
                                 <h2 class="card-title h4"  th:text = "${blog.title}"></h2>
-                                <p class="card-text"  th:text = "${blog.text}"></p>
-                                <a class="btn btn-primary" href="#!">Read more →</a>
+                                <p class="card-text"  th:text = "${#strings.abbreviate(blog.text,150)}"gi></p>
+                                <a class="btn btn-primary" th:href="@{blog/{id}(id=${blog.id})}">Read more →</a>
                             </div>
                         </div>
                     </div>
