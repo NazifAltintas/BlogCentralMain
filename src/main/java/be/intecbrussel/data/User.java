@@ -6,31 +6,32 @@ import java.util.List;
 
 @Entity
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true, length = 45)
+@Column(nullable = false, unique = true, length = 45)
     private String email;
 
-    @Column(nullable = false, length = 8)
+    @Column()
     private String password;
 
-    @Column( nullable = false, length = 40)
+    @Column(  length = 40)
     private String name;
 
     //nick·name
-    @Column( nullable = false, length = 40, unique = true)
-    private String UserName;
+    @Column( length = 40, unique = true)
+    private String userName;
 
     @Column( length = 40)
-    private int Street;
+    private String street;
 
     @Column(  length = 40)
-    private int HouseNr;
+    private int houseNr;
 
     @Column( length = 40)
-    private String City;
+    private String city;
 
     @Column(  length = 40)
     private int ZIP;
@@ -46,20 +47,31 @@ public class User {
     }
 
     public User(  String userName, String password ) {
-        this.UserName = userName;
+        this.userName = userName;
         this.password = password;
     }
 
+    public User(String email, String password, String name, String userName, String street, int houseNr, String city, int ZIP) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.userName = userName;
+        this.street = street;
+        this.houseNr = houseNr;
+        this.city = city;
+        this.ZIP = ZIP;
+    }
+
     public User(String email, String password,
-                String name, String userName, int street, int houseNr,
+                String name, String userName, String street, int houseNr,
                 String city, int ZIP, Date date, List<Comment> comments) {
         this.email = email;
         this.password = password;
         this.name = name;
-        UserName = userName;
-        Street = street;
-        HouseNr = houseNr;
-        City = city;
+        this.userName = userName;
+        this.street = street;
+        this.houseNr = houseNr;
+        this.city = city;
         this.ZIP = ZIP;
         this.date = date;
         this.comments = comments;
@@ -98,35 +110,35 @@ public class User {
     }
 
     public String getUserName() {
-        return UserName;
+        return userName;
     }
 
     public void setUserName(String userName) {
-        UserName = userName;
+        this.userName = userName;
     }
 
-    public int getStreet() {
-        return Street;
+    public String getStreet() {
+        return street;
     }
 
-    public void setStreet(int street) {
-        Street = street;
+    public void setStreet(String street) {
+        this.street = street;
     }
 
     public int getHouseNr() {
-        return HouseNr;
+        return houseNr;
     }
 
     public void setHouseNr(int houseNr) {
-        HouseNr = houseNr;
+        this.houseNr = houseNr;
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
     public int getZIP() {

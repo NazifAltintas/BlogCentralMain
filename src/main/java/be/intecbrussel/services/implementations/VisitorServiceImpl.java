@@ -7,6 +7,8 @@ import be.intecbrussel.services.interfaces.VisitorService;
 import java.util.List;
 
 public class VisitorServiceImpl implements VisitorService {
+
+
     @Override
     public List<User> getAllVisitors() {
         return null;
@@ -24,6 +26,12 @@ public class VisitorServiceImpl implements VisitorService {
 
     @Override
     public void deleteVisitorById(int id) {
+
+    }
+
+
+    @Override
+    public void createUser(User user) {
 
     }
 }

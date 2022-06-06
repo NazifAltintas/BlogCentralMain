@@ -1,6 +1,7 @@
 package be.intecbrussel.services.implementations;
 
 import be.intecbrussel.data.Auteur;
+import be.intecbrussel.data.User;
 import be.intecbrussel.repository.AuteurRepository;
 import be.intecbrussel.services.interfaces.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,4 +43,8 @@ public class AuthorServiceImpl implements AuthorService {
 
     }
 
+    @Override
+    public void createUser(User user) {
+
+    }
 }
