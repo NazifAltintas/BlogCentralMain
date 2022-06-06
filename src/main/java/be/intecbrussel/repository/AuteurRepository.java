@@ -5,7 +5,7 @@ import be.intecbrussel.data.Auteur;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface AuteurRepository extends JpaRepository<Auteur,Integer> {
+public interface AuteurRepository extends JpaRepository<Auteur,Long> {
 }
 
 
