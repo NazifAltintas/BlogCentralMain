@@ -1,4 +1,14 @@
 package be.intecbrussel.services.interfaces;
 
+import be.intecbrussel.data.Auteur;
+import be.intecbrussel.data.User;
+
+import java.util.List;
+
 public interface UserService {
+
+    List<User> getAllUsers();
+    User getUserById(Long id);
+    void createUser(User user);
+    void deleteUser(User user);
 }
