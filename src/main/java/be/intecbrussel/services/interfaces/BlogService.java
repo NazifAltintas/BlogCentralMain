@@ -1,14 +1,14 @@
-package be.intecbrussel.service.intefaces;
+package be.intecbrussel.services.interfaces;
 
 import be.intecbrussel.data.Blog;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BlogService {
     public List<Blog> getAllBlogs();
-
-
     public Blog getBlogById(long id);
- 
     public void createBlog(Blog blog);
+    public List<Blog> findBlogsByTitle(String title);
+    public List<Blog> findBlogsByAuthor(String Name);
 }

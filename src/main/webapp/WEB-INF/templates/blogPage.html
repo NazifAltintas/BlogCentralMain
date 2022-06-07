@@ -10,6 +10,11 @@
     <p th:text = "${blog.title}" ></p>
     <p> BlogContent: </p>
     <p th:text = "${#strings.abbreviate(blog.text,150)}"></p>
+    <form th:action = "@{blog/title/{title}}">
+        <input class="form-control" type="text" placeholder="Enter search term..."
+               aria-label="Enter search term..." aria-describedby="button-search" />
+        <input type="submit" value="search" th:href="@{/blog/title/{title}(title= ${blog.title})}"\>
+    </form>
 </div>
 
 </body>
