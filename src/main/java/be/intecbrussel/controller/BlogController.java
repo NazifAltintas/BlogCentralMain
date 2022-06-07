@@ -25,10 +25,6 @@ public class BlogController {
         this.blogService = blogService;
     }
 
-    @GetMapping("/blog")
-    public String blogExample() {
-        return "blogexample";
-    }
 
     @GetMapping("/blogs")
     public String showAllBlogs(Model model) {
@@ -59,7 +55,7 @@ public class BlogController {
         return "blogPost";
     }
 
-    @PostMapping("blog")
+    @PostMapping("/blog")
     public String searchByTitle(@ModelAttribute("search") Search search,
                                 Model model) {
         List<Blog> blogs = blogService.findBlogsByTitle(search.getTitle());

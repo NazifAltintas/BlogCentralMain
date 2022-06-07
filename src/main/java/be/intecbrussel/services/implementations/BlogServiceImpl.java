@@ -23,10 +23,11 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Blog getBlogById(long id) {
-            Blog blog = blogsRepository.findById(id).get();
-            return blog;
+    public Blog getBlogById(Long id) {
+        Blog blog = blogsRepository.findById(id).get();
+        return blog;
     }
+
 
     @Override
     public void createBlog(Blog blog) {
@@ -61,6 +62,11 @@ public class BlogServiceImpl implements BlogService {
             }
         }
         return blogsList;
+    }
+
+    @Override
+    public void deleteBlog(Blog blog) {
+
     }
 }
 
