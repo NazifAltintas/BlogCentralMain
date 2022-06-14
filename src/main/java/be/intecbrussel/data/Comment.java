@@ -9,7 +9,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true, length = 45)
+    @Column(nullable = false, unique = true, length = 500)
     private String text;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -19,6 +19,14 @@ public class Comment {
     private Blog blog;
 
     public Comment() {
+    }
+    public Comment(String text) {
+        this.text = text;
+    }
+
+    public Comment(String text, User commentator) {
+        this.text = text;
+        this.commentator = commentator;
     }
 
     public Comment(String text, User commentator, Blog blog) {
@@ -57,5 +65,15 @@ public class Comment {
 
     public void setBlog(Blog blog) {
         this.blog = blog;
+    }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", commentator=" + commentator +
+                ", blog=" + blog +
+                '}';
     }
 }
