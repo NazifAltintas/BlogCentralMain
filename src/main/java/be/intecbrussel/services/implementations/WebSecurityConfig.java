@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import javax.servlet.annotation.WebServlet;
 import javax.sql.DataSource;
 
 
@@ -46,19 +47,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/list_users").authenticated()
-                .antMatchers("/blog/{id}").authenticated()
+               // .antMatchers("/blogsBS").authenticated()
+                 .antMatchers("/blog/{id}").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
                 .usernameParameter("userName")
-                .defaultSuccessUrl("/list_users")
+              .defaultSuccessUrl("/blogsBS")
                 .permitAll()
                 .and()
+                .csrf().disable()
                 .logout().logoutSuccessUrl("/").permitAll();
     }
-
-
-
-
 }

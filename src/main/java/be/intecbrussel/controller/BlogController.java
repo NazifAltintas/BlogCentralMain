@@ -4,6 +4,7 @@ package be.intecbrussel.controller;
 import be.intecbrussel.data.Blog;
 import be.intecbrussel.data.Search;
 import be.intecbrussel.services.interfaces.BlogService;
+import be.intecbrussel.services.interfaces.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,14 +18,16 @@ public class BlogController {
 
     private BlogService blogService;
 
+    private CommentService commentService;
+
     public BlogController() {
     }
 
     @Autowired
-    public BlogController(BlogService blogService) {
+    public BlogController(BlogService blogService, CommentService commentService) {
         this.blogService = blogService;
+        this.commentService = commentService;
     }
-
 
     @GetMapping("/blogs")
     public String showAllBlogs(Model model) {
@@ -49,6 +52,7 @@ public class BlogController {
             System.out.println("give a proper number");
             idInLong = 1l;
         }
+        model.addAttribute("allOfComments", commentService.getAllComments());
         Blog blog = blogService.getBlogById(idInLong);
         model.addAttribute(blog);
 
