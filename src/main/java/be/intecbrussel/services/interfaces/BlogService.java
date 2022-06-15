@@ -13,4 +13,6 @@ public interface BlogService {
     public List<Blog> findBlogsByTitle(String title);
     public List<Blog> findBlogsByAuthor(String Name);
     public void deleteBlog(Blog blog);
+    public List<Blog> sortByDate();
+    public List<Blog> getBlogByPageNum(int id);
 }

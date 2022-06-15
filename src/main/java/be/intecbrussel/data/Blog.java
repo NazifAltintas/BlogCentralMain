@@ -1,6 +1,7 @@
 package be.intecbrussel.data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class Blog {
     private Auteur auteur;
 
     @Column
-    private Date date;
+    private LocalDateTime dateTime;
 
     @OneToMany(mappedBy = "blog", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Comment> comments;
@@ -32,12 +33,12 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(String text, String title, String link, Auteur auteur, Date date, List<Comment> comments) {
+    public Blog(String text, String title, String link, Auteur auteur, LocalDateTime dateTime, List<Comment> comments) {
         this.text = text;
         this.title = title;
         this.link = link;
         this.auteur = auteur;
-        this.date=date;
+        this.dateTime = dateTime;
         this.comments = comments;
     }
 
@@ -89,11 +90,12 @@ public class Blog {
         this.comments = comments;
     }
 
-    public Date getDate() {
-        return date;
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 }
+
