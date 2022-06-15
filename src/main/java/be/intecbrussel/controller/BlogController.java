@@ -66,7 +66,7 @@ public class BlogController {
             System.out.println("give a proper number");
             idInLong = 1l;
         }
-        model.addAttribute("allOfComments", commentService.getAllComments());
+        model.addAttribute("allOfComments", commentService.getAllCommentsByBlog(idInLong));
         Blog blog = blogService.getBlogById(idInLong);
         model.addAttribute(blog);
         model.addAttribute("search", new Search());

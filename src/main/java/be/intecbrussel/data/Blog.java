@@ -109,6 +109,16 @@ public class Blog {
         this.dateTime = dateTime;
     }
 
-
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", title='" + title + '\'' +
+                ", link='" + link + '\'' +
+                ", auteur=" + auteur +
+                ", dateTime=" + dateTime +
+                '}';
+    }
 }
 

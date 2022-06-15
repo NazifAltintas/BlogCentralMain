@@ -67,19 +67,22 @@
                     </article>
                     <!-- Comments section-->
                     <section class="mb-5">
-                <div>
+
+
+                        <label for="exampleInputPassword1">Comments *</label>
+
+                        <div>
                         <div class="card bg-light">
                             <div class="card-body">
 
 
                                 </div>
+
                                 <!-- Single comment-->
                                 <div class="d-flex" th:each="comment:${allOfComments}">
                                     <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                                     <div class="ms-3">
                                         <div class="fw-bold"> <p th:text="${comment.commentator}"></p>
-                                        </div>
-                                        <div class="fw-bold"> <p th:text="${comment.blog}"></p>
                                         </div>
                                         <p th:text="${comment.text}"></p>
                                     </div>
@@ -91,7 +94,7 @@
                     <section class="mb-5"  >
                         <form th:action="@{/postComment/{id}(id=${blog.id})}" method="post">
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Comments *</label>
+
                                 <input name="text"  type="text" class="form-control" id="exampleInputPassword1">
                             </div>
                             <input type="submit" value="Create Comment">
