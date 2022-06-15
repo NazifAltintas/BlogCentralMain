@@ -84,22 +84,12 @@ try {
     System.out.println(numberFormatException);
 }
 
-
-
         commentService.createComment(comment);
 
         return "commentSucces";
     }
 
-    @Bean
-    public void vvv(){
 
-        Blog blog= new Blog("knsvnkvn", "dljkvnkjdvd");
-
-        blogService.createBlog(blog);
-
-
-    }
 
 
     @GetMapping("/list_users")
