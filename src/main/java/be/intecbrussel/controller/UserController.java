@@ -1,5 +1,6 @@
 package be.intecbrussel.controller;
 
+import be.intecbrussel.data.Auteur;
 import be.intecbrussel.data.Blog;
 import be.intecbrussel.data.Comment;
 import be.intecbrussel.data.User;
@@ -28,15 +29,17 @@ public class UserController {
 
     private BlogService blogService;
 
+
+
     @Autowired
     private UserRepository userRepo;
 
-
-    @Autowired
-    public UserController(@Qualifier("userServiceImpl") UserService userService, CommentService commentService) {
+   @Autowired
+    public UserController(UserService userService, CommentService commentService, BlogService blogService, UserRepository userRepo) {
         this.userService = userService;
-        this.commentService=commentService;
-
+        this.commentService = commentService;
+        this.blogService = blogService;
+        this.userRepo = userRepo;
     }
 
     @GetMapping("/userForm")
@@ -70,8 +73,10 @@ public class UserController {
 
         Long t= Long.parseLong(id);
 
+
+  Blog blog = blogService.getBlogById(t);
 try {
-    comment.getBlog().setId(t);
+    comment.setBlog(blog);
 
 } catch (NumberFormatException numberFormatException){
     t=1l;
@@ -86,10 +91,15 @@ try {
         return "commentSucces";
     }
 
-
-
     @Bean
-    public void allOfComments(){commentService.getAllComments().forEach(System.out::println);}
+    public void vvv(){
+
+        Blog blog= new Blog("knsvnkvn", "dljkvnkjdvd");
+
+        blogService.createBlog(blog);
+
+
+    }
 
 
     @GetMapping("/list_users")

@@ -2,7 +2,9 @@ package be.intecbrussel.data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 
 @Entity
@@ -28,9 +30,18 @@ public class Blog {
     private LocalDateTime dateTime;
 
     @OneToMany(mappedBy = "blog", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Comment> comments;
+    private List<Comment> comments= new ArrayList<>();
 
     public Blog() {
+    }
+
+    public Blog(String text, String title) {
+        this.text = text;
+        this.title = title;
+    }
+
+    public Blog(List<Comment> comments) {
+        this.comments = comments;
     }
 
     public Blog(String text, String title, String link, Auteur auteur, LocalDateTime dateTime, List<Comment> comments) {
@@ -96,6 +107,20 @@ public class Blog {
 
     public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", title='" + title + '\'' +
+                ", link='" + link + '\'' +
+                ", auteur=" + auteur +
+                ", dateTime=" + dateTime +
+                ", comments=" + comments +
+                '}';
     }
 }
 
