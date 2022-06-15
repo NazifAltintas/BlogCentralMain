@@ -20,7 +20,7 @@ import javax.validation.Valid;
 
 
 @Controller
-@RequestMapping( method = RequestMethod.GET)
+@RequestMapping(method = RequestMethod.GET)
 public class UserController {
 
     private UserService userService;
@@ -30,11 +30,10 @@ public class UserController {
     private BlogService blogService;
 
 
-
     @Autowired
     private UserRepository userRepo;
 
-   @Autowired
+    @Autowired
     public UserController(UserService userService, CommentService commentService, BlogService blogService, UserRepository userRepo) {
         this.userService = userService;
         this.commentService = commentService;
@@ -43,19 +42,18 @@ public class UserController {
     }
 
     @GetMapping("/userForm")
-    public String showForm(Model model){
+    public String showForm(Model model) {
 
         model.addAttribute("user", new User());
 
-        return "registrationPage";}
-
-
+        return "registrationPage";
+    }
 
 
     @PostMapping("/postUser")
-    public String createUser(@ModelAttribute("user") User user){
+    public String createUser(@ModelAttribute("user") User user) {
 
-        BCryptPasswordEncoder encoder= new BCryptPasswordEncoder();
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encoderPassword = encoder.encode(user.getPassword());
         user.setPassword(encoderPassword);
         userService.createUser(user);
@@ -63,31 +61,24 @@ public class UserController {
     }
 
 
-
-
-
-
-
     @PostMapping("/postComment/{postId}")
-    public String showSingleBlog (@ModelAttribute ("comment")Comment comment, @PathVariable("postId") String id)  {
+    public String showSingleBlog(@ModelAttribute("comment") Comment comment, @PathVariable("postId") String id) {
 
-        Long t= Long.parseLong(id);
-
-
+        Long t = Long.parseLong(id);
 
 
-  Blog blog = blogService.getBlogById(t);
+        Blog blog = blogService.getBlogById(t);
 
 
-try {
-    comment.setBlog(blog);
+        try {
+            comment.setBlog(blog);
 
 
-} catch (NumberFormatException numberFormatException){
-    t=1l;
+        } catch (NumberFormatException numberFormatException) {
+            t = 1l;
 
-    System.out.println(numberFormatException);
-}
+            System.out.println(numberFormatException);
+        }
 
         commentService.createComment(comment);
 
@@ -95,12 +86,8 @@ try {
     }
 
 
-
-
-
-
     @GetMapping("/list_users")
-    public String view(){
+    public String view() {
         return "users";
     }
 
