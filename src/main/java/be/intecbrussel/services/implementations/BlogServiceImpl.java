@@ -82,7 +82,7 @@ public class BlogServiceImpl implements BlogService {
                 .sorted(Comparator.comparing(Blog::getDateTime))
                 .collect(Collectors.toList());
         //Collections.reverse(blogs);
-        return blogs.subList(0, 6);
+        return blogs;
     }
 
     @Override

@@ -44,8 +44,13 @@ public class BlogController {
         List<Blog> allBlogs = blogService.getAllBlogs();
 
         double pageSize = Math.ceil(allBlogs.size() / 6.0);
-        model.addAttribute("blogs", allBlogs.subList(0, 6));
+        if(allBlogs.size()>6) {
+            model.addAttribute("blogs", allBlogs.subList(0, 6));
+        }
+        else {
+            model.addAttribute("blogs", allBlogs.subList(0, allBlogs.size()));
 
+        }
         model.addAttribute("allBlogs", allBlogs.size());
         model.addAttribute("pageSize", pageSize);
         model.addAttribute("search", new Search());
