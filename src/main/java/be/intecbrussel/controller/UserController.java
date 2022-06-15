@@ -74,9 +74,14 @@ public class UserController {
         Long t= Long.parseLong(id);
 
 
+
+
   Blog blog = blogService.getBlogById(t);
+
+
 try {
     comment.setBlog(blog);
+
 
 } catch (NumberFormatException numberFormatException){
     t=1l;
@@ -88,6 +93,8 @@ try {
 
         return "commentSucces";
     }
+
+
 
 
 
