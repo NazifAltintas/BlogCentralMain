@@ -1,9 +1,6 @@
 package be.intecbrussel.controller;
 
-import be.intecbrussel.data.Auteur;
-import be.intecbrussel.data.Blog;
-import be.intecbrussel.data.Comment;
-import be.intecbrussel.data.User;
+import be.intecbrussel.data.*;
 import be.intecbrussel.repository.UserRepository;
 import be.intecbrussel.services.interfaces.BlogService;
 import be.intecbrussel.services.interfaces.CommentService;
@@ -17,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 
 @Controller
@@ -85,10 +83,14 @@ public class UserController {
         return "commentSucces";
     }
 
+    @GetMapping("user/{fullName}")
+    public String showAllBlogsBS(@PathVariable String fullName,  Model model) {
 
-    @GetMapping("/list_users")
-    public String view() {
-        return "users";
+        model.addAttribute("getUser",  userService.getUserByFullName(fullName));
+
+
+
+        return "userHomePage";
     }
 
 }
