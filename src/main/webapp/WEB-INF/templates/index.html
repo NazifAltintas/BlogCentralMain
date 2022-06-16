@@ -107,7 +107,7 @@
                                     <div class="small text-muted">AuthorName</div>
                                 <h2 class="card-title h4" th:text="${blog.title}"></h2>
                                 <p class="card-text" th:text="${#strings.abbreviate(blog.text,150)}" ></p>
-                                <a class="btn btn-primary" th:href="@{blog/{id}(id=${blog.id})}">Read more →</a>
+                                <a class="btn btn-primary" th:href="@{/blog/{id}(id=${blog.id})}">Read more →</a>
                             </div>
                         </div>
                     </div>

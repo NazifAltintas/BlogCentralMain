@@ -24,6 +24,16 @@ public class VisitorServiceImpl implements VisitorService {
     }
 
     @Override
+    public User getUserByFullName(String fullName) {
+        return null;
+    }
+
+    @Override
+    public User getUserEmail(String email) {
+        return null;
+    }
+
+    @Override
     public List<User> getAllUsers() {
         return null;
     }
