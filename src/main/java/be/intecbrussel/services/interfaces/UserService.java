@@ -23,4 +23,7 @@ public interface UserService {
     void createUser(User user);
     void deleteUser(User user);
 
+    User getUserByFullName(String fullName);
+    User getUserEmail(String email);
+
 }
