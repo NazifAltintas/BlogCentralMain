@@ -30,14 +30,7 @@ public class BlogController {
         this.commentService = commentService;
     }
 
-    @GetMapping("/blogs")
-    public String showAllBlogs(Model model) {
-        model.addAttribute("blogs", blogService.getAllBlogs());
-        model.addAttribute("search", new Search());
 
-        return "blogPage";
-
-    }
 
    @GetMapping("/blogsBS")
     public String showAllBlogsBS(Model model) {
